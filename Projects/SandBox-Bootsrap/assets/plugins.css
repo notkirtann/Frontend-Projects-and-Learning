@@ -61,7 +61,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffff;
-  color: #4f7cff;
+  color: #3f78e0;
   border: none;
   width: 70px;
   height: 70px;
@@ -76,7 +76,7 @@ a {
 }
 
 .who-text p {
-  color: #6b7280;
+  color: #60697b;
   line-height: 1.8;
   margin-bottom: 30px;
   letter-spacing: 0.8px;
@@ -95,7 +95,7 @@ a {
 
 .principle span {
   background: #e8efff;
-  color: #4f7cff;
+  color: #3f78e0;
   font-size: 18px;
   width: 88px;
   height: 48px;
@@ -137,7 +137,7 @@ a {
   content: "✔";
   position: absolute;
   left: 0;
-  color: #4f7cff;
+  color: #3f78e0;
   font-weight: 600;
 }
 .why-list li {
@@ -173,13 +173,13 @@ a {
 
 .floating-card.clients p {
   margin: 0;
-  color: #6b7280;
+  color: #60697b;
   font-size: 18px;
 }
 
 .floating-card .icon {
   background: #e8efff;
-  color: #4f7cff;
+  color: #3f78e0;
   padding: 10px;
   border-radius: 10px;
 }
@@ -197,7 +197,7 @@ a {
   width: 140px;
   height: 80px;
   border: 8px solid #e5edff;
-  border-top: 8px solid #4f7cff;
+  border-top: 8px solid #3f78e0;
   border-radius: 120px 120px 0 0;
   position: relative;
   /* margin-bottom: 10px; */
@@ -216,13 +216,15 @@ a {
 .floating-card.progress p {
   position: absolute;
   font-size: 17px;
-  color: #6b7280;
+  color: #60697b;
   bottom: 12px;
 }
 
 
 /* Case Studies */
 .case-card {
+  padding: 0;
+  margin: 0;
   background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
@@ -230,15 +232,11 @@ a {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.case-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-}
+
 .case-card img {
   width: 100%;
   height: 280px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .case-content {
@@ -247,21 +245,69 @@ a {
 
 .case-content h3 {
   font-size: 20px;
+  font-weight: 700;
   color: #2b2f36;
   margin-bottom: 12px;
 }
 
 .case-content p {
   font-size: 16px;
-  color: #6b7280;
+  font-weight: 500;
+  color: #60697b;
   line-height: 1.7;
+}
+
+.case-card:hover img { 
+  filter: blur(2px);
+  transform: scale(1.01); 
+  cursor: pointer;
+}
+.case-card::before {
+  content: "Read More";
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  opacity:40px;
+  visibility: hidden;
+  /* transition: all 0.4s ease; */
+  z-index: 2;
+}
+
+.case-card:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) translateY(-40px);
+}
+
+/* Darken overlay on hover */
+.case-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.case-card:hover::after {
+  opacity: 1;
 }
 
 .case-meta {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 26px;
+  padding: 30px 26px;
   border-top: 1px solid #eef1f5;
   font-size: 14px;
   color: #9aa4b2;
@@ -306,7 +352,7 @@ input[type="radio"] {
 
     .tab-text p {
       font-size: 14px;
-      color: #6b7280;
+      color: #60697b;
       line-height: 1.5;
     }
 
@@ -436,7 +482,7 @@ input[type="radio"] {
     }
 
     .panel-text p {
-      color: #6b7280;
+      color: #60697b;
       margin-bottom: 24px;
       line-height: 1.8;
       font-size: 16px;
@@ -457,14 +503,14 @@ input[type="radio"] {
 
     .panel-text ul li::before {
       content: "✓";
-      color: #4f7cff;
+      color: #3f78e0;
       position: absolute;
       left: 0;
       font-weight: 700;
       font-size: 18px;
     }
   .btn-primary-why {
-      background: #4f7cff;
+      background: #3f78e0;
       color: white;
       padding: 14px 32px;
       border-radius: 8px;
@@ -493,6 +539,7 @@ input[type="radio"] {
 .testimonial-swiper-section {
   position: relative;
   z-index: 1;
+  background-color: #3250B7;
 }
 
 /* Testimonial Card */
@@ -502,6 +549,7 @@ input[type="radio"] {
   border-radius: 16px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
+  transform: translateY(-80px);
 }
 
 .testimonial-card .card-body {
@@ -584,7 +632,7 @@ input[type="radio"] {
 
 .testimonial-position {
   font-size: 14px;
-  color: #6b7280;
+  color: #60697b;
   margin: 0;
   line-height: 1.2;
 }
@@ -606,7 +654,7 @@ input[type="radio"] {
 
 /* Swiper Pagination Dots */
 .testimonial-swiper .swiper-pagination {
-  bottom: 0;
+  bottom: 1;
   left: 0;
   width: 100%;
   position: absolute;
@@ -617,39 +665,28 @@ input[type="radio"] {
 }
 
 .testimonial-swiper .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background: #cbd5e0;
   opacity: 1;
   border-radius: 50%;
   transition: all 0.3s ease;
   cursor: pointer;
-  margin: 0 4px;
+  margin: 2px 4px;
 }
 
 .testimonial-swiper .swiper-pagination-bullet:hover {
   background: #9ca3af;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .testimonial-swiper .swiper-pagination-bullet-active {
   background: #3f78e0;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   transform: scale(1);
 }
 
-/* Fade Effect Enhancement */
-.swiper-fade .swiper-slide {
-  pointer-events: none;
-  transition-property: opacity;
-}
-
-.swiper-fade .swiper-slide-active {
-  pointer-events: auto;
-}
-
-/* Responsive Adjustments */
 @media (max-width: 767.98px) {
   .testimonial-card .card-body {
     padding: 2rem 1.5rem;
