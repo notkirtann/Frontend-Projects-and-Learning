@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { InputBox } from "./components"
-import useCurrencyInfo from "./hooks/useCurrencyinfo";
+import useCurrencyInfo from "/src/hooks/useCurrencyInfo.js";
 import BackgroundImage from '/src/images/bg-image.jpg';
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
   const [to,setTo] = useState("inr");
   const [convertedAmt, setConvertedAmt]=useState(0);
 
-  const currencyInfo = useCurrencyInfo()
+  const currencyInfo = useCurrencyInfo(from)
 
   const options =Object.keys(currencyInfo)
 
@@ -44,8 +44,10 @@ function App() {
                                 label="From"
                                 amount={amount}
                                 currencyOption={options}
-                                onCurrencyChange={(currency)=>setAmount(amount)}
+                                onCurrencyChange={(currency)=>setFrom(currency)}
                                 selectCurrency={from}
+                                onAmountChange={(amount)=> setAmount(amount)}
+                                
                             />
                         </div>
                         <div className="relative w-full h-0.5">
@@ -63,12 +65,12 @@ function App() {
                                 amount={convertedAmt}
                                 currencyOption={options}
                                 onCurrencyChange={(currency)=>setTo(currency)}
-                                selectCurrency={from}
+                                selectCurrency={to}
                                 amountDisable
                                 
                             />
                         </div>
-                        <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
+                        <button onChange={convert} type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
                             Convert {from.toUpperCase()} to {to.toUpperCase()}
                         </button>
                     </form>
