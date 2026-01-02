@@ -164,3 +164,39 @@ In this corrected example, we use the `useState` hook to create a state variable
 1. **Improved Responsiveness**: Fiber allows React to prioritize updates, ensuring that high-priority updates (like user interactions) are handled quickly, improving the overall responsiveness of the application.
 2. **Time-Slicing**: Fiber enables React to break down rendering work into smaller chunks, allowing it to yield control back to the main thread and avoid blocking the UI during long rendering tasks.
 3. **Concurrent Rendering**: Fiber supports concurrent rendering, allowing React to work on multiple tasks simultaneously, improving the performance of complex applications.
+
+## Hooks in Detail
+### useState
+- The `useState` hook allows you to add state to functional components.
+- It returns an array with two elements: the current state value and a function to update it.
+```jsx
+const [state, setState] = useState(initialValue);
+```
+### useEffect
+- The `useEffect` hook allows you to perform side effects in functional components.
+- It takes a function as an argument that will be executed after the component renders.
+```jsx
+useEffect(() => {
+  // Side effect code here
+}, [dependencies]);
+```
+### useRef
+- The `useRef` hook allows you to create a mutable reference that persists across renders.
+- It can be used to access DOM elements or store mutable values.
+```jsx
+const ref = useRef(initialValue);
+```
+### useCallback
+- The `useCallback` hook returns a memoized version of a callback function that only changes if one of the dependencies has changed.
+```jsx
+const memoizedCallback = useCallback(() => {
+  // Callback code here
+}, [dependencies]);
+```
+- notes rembember keys in loops/map functions should be unique and stable.
+
+### useId
+- The `useId` hook generates a unique ID that can be used for accessibility attributes or other purposes.
+```jsx
+const id = useId();
+```
