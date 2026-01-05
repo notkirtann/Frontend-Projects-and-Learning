@@ -200,3 +200,25 @@ const memoizedCallback = useCallback(() => {
 ```jsx
 const id = useId();
 ```
+
+# Routes in React
+refer routes-example-project for more info. in Learning folder.
+## Introduction to React Router
+- React Router is a popular library for handling routing in React applications.
+- It allows you to define different routes and map them to specific components.
+- You can use the `BrowserRouter`, `Route`, and `Link` components from React Router to set up routing in your application.
+
+```jsx
+import {Link,NavLink,Route,Routes} from 'react-router-dom'
+```
+- `Link` is used to create navigation links between different routes. We dont use anchor tags in react for navigation as it reloads the entire app.
+- `NavLink` is similar to `Link`, but it allows you to apply active styles to the currently active link.
+- `Route` is used to define a specific route and map it to a component.
+-`Routes` is a container component that holds multiple `Route` components and renders the appropriate component based on the current URL.
+## Example of Routing
+ refer routes-example-project folder for example code.
+
+extra router info:
+- Use `useParams` hook to access route parameters. refer example in routes-example-project
+- UseLoaderData to load data before rendering a route. refer example in routes-example-project.
+
