@@ -106,7 +106,8 @@ function App() {
 }
 
 export default App
-```In the above example, clicking the "Add Value" button will not update the displayed counter value because React does not track changes to the `counter` variable. To make the UI update correctly, we need to use the `useState` hook to manage the counter state.
+```
+In the above example, clicking the "Add Value" button will not update the displayed counter value because React does not track changes to the `counter` variable. To make the UI update correctly, we need to use the `useState` hook to manage the counter state.
 Corrected example using useState:
 ```jsx
 import { useState } from 'react'
@@ -215,10 +216,9 @@ import {Link,NavLink,Route,Routes} from 'react-router-dom'
 - `NavLink` is similar to `Link`, but it allows you to apply active styles to the currently active link.
 - `Route` is used to define a specific route and map it to a component.
 -`Routes` is a container component that holds multiple `Route` components and renders the appropriate component based on the current URL.
-## Example of Routing
+### Example of Routing
  refer routes-example-project folder for example code.
 
 extra router info:
 - Use `useParams` hook to access route parameters. refer example in routes-example-project
 - UseLoaderData to load data before rendering a route. refer example in routes-example-project.
-
